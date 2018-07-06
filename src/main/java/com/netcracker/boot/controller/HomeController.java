@@ -17,7 +17,7 @@ public class HomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String ok() {
-        return "Congratulations " ;
+        return "Congratulations from 2" ;
     }
 
     @RequestMapping(value = "/request", method = RequestMethod.GET)
@@ -25,5 +25,10 @@ public class HomeController {
         ResponseEntity<String> response
                 = restTemplate.getForEntity(BOOT_FIRST_URL , String.class);
         return response.getBody().toString();
+    }
+
+    @RequestMapping(value = "/ab", method = RequestMethod.GET)
+    public String ab() {
+        return "it is ok" ;
     }
 }
