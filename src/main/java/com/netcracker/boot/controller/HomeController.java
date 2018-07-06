@@ -12,13 +12,13 @@ public class HomeController {
 
 
     RestTemplate restTemplate = new RestTemplate();
-    String fooResourceUrl
-            = "http://localhost:8080/response";
+    final String BOOT_FIRST_URL
+            = "http://boot-first:8080";
 
     @RequestMapping(value = "/request", method = RequestMethod.GET)
     public String index() {
         ResponseEntity<String> response
-                = restTemplate.getForEntity(fooResourceUrl , String.class);
+                = restTemplate.getForEntity(BOOT_FIRST_URL , String.class);
         return response.getBody().toString();
     }
 }
