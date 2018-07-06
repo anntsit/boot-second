@@ -15,6 +15,11 @@ public class HomeController {
     final String BOOT_FIRST_URL
             = "http://boot-first:8080";
 
+    @GetMapping(value = "")
+    public String ok() {
+        return "ok";
+    }
+
     @RequestMapping(value = "/request", method = RequestMethod.GET)
     public String index() {
         ResponseEntity<String> response
