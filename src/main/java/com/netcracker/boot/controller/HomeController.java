@@ -13,11 +13,11 @@ public class HomeController {
 
     RestTemplate restTemplate = new RestTemplate();
     final String BOOT_FIRST_URL
-            = "http://boot-first:8080";
+            = "http://boot-first:8080/response";
 
-    @GetMapping(value = "")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String ok() {
-        return "ok";
+        return "Congratulations " ;
     }
 
     @RequestMapping(value = "/request", method = RequestMethod.GET)
